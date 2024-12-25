@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ניהול רכבי חברה</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- טופס התחברות -->
+        <div id="loginForm" class="login-container">
+            <h2>התחברות למערכת</h2>
+            <form id="loginFormElement" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label for="username">שם משתמש:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">סיסמה:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit">התחבר</button>
+            </form>
+        </div>
+
+        <!-- תוכן ראשי - מוסתר בהתחלה -->
+        <div id="mainContent" style="display: none;">
+            <div class="header">
+                <h1>מערכת ניהול רכבי חברה</h1>
+                <div class="user-info">
+                    <span id="userDisplay"></span>
+                    <button onclick="handleLogout()">התנתק</button>
+                </div>
+            </div>
+            <div class="week-navigation">
+                <button onclick="prevWeek()">שבוע קודם</button>
+                <span id="currentWeek"></span>
+                <button onclick="nextWeek()">שבוע הבא</button>
+            </div>
+            <div id="scheduleTable"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
